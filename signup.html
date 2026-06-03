@@ -1,505 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Popistry | Create Account — Artisanal Popcorn & Gourmet Snacks</title>
     <link rel="icon" href="assests/fav.png" type="image/jpeg">
+    <meta name="description"
+        content="Join the Popistry Crunch Club — create an account, enjoy exclusive member benefits, and track your gourmet snack orders.">
+    <!-- Tailwind + Fonts + Icons -->
+    <script src="tailwind.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@300;400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@300;400;700;900&display=swap"
         rel="stylesheet">
 
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
+                    colors: {
+                        'popcorn-gold': '#6B8E23',
+                        'popcorn-deep': '#D48A2A',
+                        'popcorn-light': '#FDE6B6',
+                        'dark-gray': '#111111',
+                        'warm-gray': '#FDF9F2'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'system-ui', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.3em',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
+        body {
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* ===== ABSOLUTELY FIXED NO-SCROLL BODY ===== */
-        body {
-            font-family: 'Lato', sans-serif;
-            background: #0a0a0a;
-            position: fixed;
+        /* Enhanced scrollbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar-thumb {
+            background: #6B8E23;
+            border-radius: 10px;
+        }
+
+        .hide-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #6B8E23 transparent;
+        }
+
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.08);
+            }
+        }
+
+        .slow-zoom {
+            animation: slowZoom 28s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatPop {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(3deg);
+            }
+        }
+
+        .float-pop {
+            animation: floatPop 6s ease-in-out infinite;
+        }
+
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-shine::after {
+            content: '';
+            position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
         }
 
-        /* Fixed Background Image & Overlay - Popcorn / Snack Theme */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1600508774520-46bcc7cbd9be?q=80&w=2070&auto=format');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.35;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Main container — perfectly centered */
-        .container {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0 16px;
-            max-height: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Card styling - Popistry Premium */
-        .signup-card {
-            background: #ffffff;
-            border-radius: 28px;
-            padding: 24px 28px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            width: 100%;
-            max-height: calc(100vh - 32px);
-            overflow-y: auto;
-            scrollbar-width: thin;
-            transition: background 0.2s ease, border-color 0.2s;
-        }
-
-        .signup-card::-webkit-scrollbar {
-            width: 3px;
-        }
-
-        .signup-card::-webkit-scrollbar-track {
-            background: #e0e0e0;
-            border-radius: 10px;
-        }
-
-        .signup-card::-webkit-scrollbar-thumb {
-            background: #6B8E23;
-            border-radius: 10px;
-        }
-
-        .dark-mode .signup-card {
-            background: #121212;
-        }
-
-        /* Logo - Popistry */
-        .logo {
-            text-align: center;
-            margin-bottom: 14px;
-        }
-
-        .logo a {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            font-style: italic;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo a {
-            color: #6B8E23;
-        }
-
-        /* Title */
-        .title {
-            text-align: center;
-            margin-bottom: 14px;
-        }
-
-        .title h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-
-        .dark-mode .title h1 {
-            color: #ffffff;
-        }
-
-        .title p {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .dark-mode .title p {
-            color: #aaa;
-        }
-
-        /* Social buttons */
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .social-btn {
-            flex: 1;
-            height: 42px;
-            border-radius: 40px;
-            border: 1px solid #e0e0e0;
-            background: #ffffff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #333;
-            transition: all 0.2s;
-        }
-
-        .dark-mode .social-btn {
-            background: #1e1e1e;
-            border-color: #333;
-            color: #ddd;
-        }
-
-        .social-btn:hover {
-            border-color: #6B8E23;
-            transform: translateY(-1px);
-        }
-
-        .social-btn i {
-            font-size: 14px;
-        }
-
-        .social-btn.google i {
-            color: #DB4437;
-        }
-
-        .social-btn.facebook i {
-            color: #1877F2;
-        }
-
-        .social-btn.apple i {
-            color: #000;
-        }
-
-        .dark-mode .social-btn.apple i {
-            color: #fff;
-        }
-
-        /* Divider */
-        .divider {
-            text-align: center;
-            margin: 12px 0 16px;
-            position: relative;
-        }
-
-        .divider::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 1px;
-            background: #e0e0e0;
-        }
-
-        .dark-mode .divider::before {
-            background: #333;
-        }
-
-        .divider span {
-            position: relative;
-            background: #ffffff;
-            padding: 0 12px;
-            font-size: 9px;
-            font-weight: 600;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .dark-mode .divider span {
-            background: #121212;
-            color: #777;
-        }
-
-        /* Form groups */
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #374151;
-            margin-bottom: 5px;
-        }
-
-        .dark-mode .form-group label {
-            color: #d1d5db;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-            color: #1a1a1a;
-            background: #f9fafb;
-            font-family: 'Lato', sans-serif;
-            transition: all 0.2s;
-        }
-
-        .dark-mode .form-group input {
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            font-weight: 700;
-        }
-
-        .form-group input::placeholder {
-            color: #9ca3af;
-            font-weight: 400;
-        }
-
-        .dark-mode .form-group input::placeholder {
-            color: #6b7280;
-            font-weight: 400;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #6B8E23;
-            box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.25);
-        }
-
-        .password-wrapper {
-            position: relative;
-            width: 100%;
-        }
-
-        .password-wrapper input {
-            padding-right: 44px;
-        }
-
-        .toggle-password {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #9ca3af;
-            cursor: pointer;
-            font-size: 13px;
-            padding: 6px;
-            transition: color 0.2s;
-        }
-
-        .toggle-password:hover {
-            color: #6B8E23;
-        }
-
-        .dark-mode .toggle-password {
-            color: #6b7280;
-        }
-
-        .dark-mode .toggle-password:hover {
-            color: #6B8E23;
-        }
-
-        /* Checkbox */
-        .checkbox-group {
-            margin: 12px 0 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .checkbox-group input {
-            width: 14px;
-            height: 14px;
-            cursor: pointer;
-            accent-color: #6B8E23;
-            flex-shrink: 0;
-        }
-
-        .checkbox-group label {
-            font-size: 10px;
-            color: #666;
-            cursor: pointer;
-            line-height: 1.3;
-            font-weight: 500;
-        }
-
-        .dark-mode .checkbox-group label {
-            color: #aaa;
-        }
-
-        .checkbox-group a {
-            color: #6B8E23;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .checkbox-group a:hover {
-            text-decoration: underline;
-        }
-
-        .btn-create {
-            width: 100%;
-            padding: 12px;
-            background: #6B8E23;
-            border: none;
-            border-radius: 40px;
-            color: white;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            margin-bottom: 16px;
-            font-family: 'Lato', sans-serif;
-            transition: background 0.2s, transform 0.05s;
-        }
-
-        .btn-create:hover {
-            background: #D48A2A;
-        }
-
-        .btn-create:active {
-            transform: scale(0.98);
-        }
-
-        .login-link {
-            text-align: center;
-            font-size: 11px;
-            color: #666;
-            padding-top: 12px;
-            border-top: 1px solid #eee;
-        }
-
-        .dark-mode .login-link {
-            border-top-color: #2a2a2a;
-            color: #aaa;
-        }
-
-        .login-link a {
-            color: #6B8E23;
-            text-decoration: none;
-            font-weight: 700;
-            margin-left: 5px;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
-        /* Floating controls - Proper spacing */
-        .top-controls {
-            position: fixed;
-            top: 18px;
-            right: 18px;
-            display: flex;
-            gap: 10px;
-            z-index: 200;
-            background: transparent;
-            isolation: isolate;
-        }
-
-        .control-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(20, 20, 24, 0.72);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(107, 142, 35, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #f5f0e6;
-            font-size: 16px;
-            transition: 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .control-btn:hover {
-            background: #6B8E23;
-            border-color: rgba(107, 142, 35, 0.8);
-            transform: scale(1.02);
-            color: white;
-        }
-
-        .control-btn:active {
-            transform: scale(0.96);
-        }
-
-        .dark-mode .control-btn {
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(12px);
-            border-color: rgba(107, 142, 35, 0.7);
-            color: #f0e7da;
-        }
-
-        .dark-mode .control-btn:hover {
-            background: #6B8E23;
-            color: #ffffff;
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #6B8E23;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 60px;
-            font-size: 12px;
-            font-weight: 700;
-            z-index: 300;
-            animation: toastFade 2.5s ease forwards;
-            white-space: nowrap;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-            pointer-events: none;
-            font-family: 'Lato', sans-serif;
-            letter-spacing: 0.3px;
+        .btn-shine:hover::after {
+            left: 100%;
         }
 
         @keyframes toastFade {
@@ -508,516 +135,589 @@
                 transform: translateX(-50%) translateY(20px);
             }
 
-            12% {
+            15% {
                 opacity: 1;
                 transform: translateX(-50%) translateY(0);
             }
 
-            88% {
+            85% {
                 opacity: 1;
                 transform: translateX(-50%) translateY(0);
             }
 
             100% {
                 opacity: 0;
-                transform: translateX(-50%) translateY(-6px);
-                visibility: hidden;
+                transform: translateX(-50%) translateY(-10px);
             }
         }
 
-        /* ===== RESPONSIVE STYLES FOR ALL DIMENSIONS ===== */
-        @media (max-width: 450px) {
-            .container {
-                padding: 0 12px;
-            }
-
-            .signup-card {
-                padding: 18px 20px;
-                border-radius: 24px;
-                max-height: calc(100vh - 24px);
-            }
-
-            .logo {
-                margin-bottom: 8px;
-            }
-
-            .logo a {
-                font-size: 24px;
-            }
-
-            .title {
-                margin-bottom: 8px;
-            }
-
-            .title h1 {
-                font-size: 22px;
-            }
-
-            .title p {
-                font-size: 11px;
-            }
-
-            .social-login {
-                gap: 8px;
-                margin-bottom: 12px;
-            }
-
-            .social-btn {
-                height: 38px;
-                font-size: 11px;
-                gap: 4px;
-            }
-
-            .social-btn i {
-                font-size: 12px;
-            }
-
-            .divider {
-                margin: 8px 0 12px;
-            }
-
-            .form-group {
-                margin-bottom: 8px;
-            }
-
-            .form-group input {
-                padding: 9px 12px;
-                font-size: 12px;
-            }
-
-            .checkbox-group {
-                margin: 8px 0 12px;
-            }
-
-            .checkbox-group label {
-                font-size: 9px;
-            }
-
-            .btn-create {
-                padding: 10px;
-                font-size: 11px;
-                margin-bottom: 12px;
-            }
-
-            .login-link {
-                font-size: 10px;
-                padding-top: 10px;
-            }
-
-            .top-controls {
-                top: 12px;
-                right: 12px;
-                gap: 8px;
-            }
-
-            .control-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 14px;
-            }
+        .toast-animation {
+            animation: toastFade 2.5s ease forwards;
         }
 
-        /* Compact heights handling */
-        @media (max-height: 750px) and (min-width: 320px) {
-            .signup-card {
-                padding: 14px 20px;
-                max-height: calc(100vh - 20px);
-            }
-
-            .logo {
-                margin-bottom: 6px;
-            }
-
-            .logo a {
-                font-size: 22px;
-            }
-
-            .title {
-                margin-bottom: 6px;
-            }
-
-            .title h1 {
-                font-size: 20px;
-                margin-bottom: 2px;
-            }
-
-            .title p {
-                font-size: 10px;
-            }
-
-            .social-login {
-                margin-bottom: 8px;
-                gap: 6px;
-            }
-
-            .social-btn {
-                height: 34px;
-                font-size: 10px;
-            }
-
-            .divider {
-                margin: 6px 0 8px;
-            }
-
-            .form-group {
-                margin-bottom: 6px;
-            }
-
-            .form-group label {
-                font-size: 9px;
-                margin-bottom: 3px;
-            }
-
-            .form-group input {
-                padding: 7px 10px;
-                font-size: 11px;
-            }
-
-            .password-wrapper input {
-                padding-right: 36px;
-            }
-
-            .toggle-password {
-                font-size: 11px;
-                right: 8px;
-            }
-
-            .checkbox-group {
-                margin: 6px 0 8px;
-                gap: 6px;
-            }
-
-            .checkbox-group label {
-                font-size: 8px;
-            }
-
-            .btn-create {
-                padding: 8px;
-                font-size: 10px;
-                margin-bottom: 8px;
-            }
-
-            .login-link {
-                font-size: 9px;
-                padding-top: 8px;
-            }
-
-            .control-btn {
-                width: 34px;
-                height: 34px;
-                font-size: 13px;
-            }
-
-            .top-controls {
-                top: 8px;
-                right: 8px;
-            }
-        }
-
-        /* RTL support */
-        [dir="rtl"] .top-controls {
+        /* RTL overrides */
+        [dir="rtl"] .rtl\:right-auto {
             right: auto;
-            left: 18px;
         }
 
-        [dir="rtl"] .toggle-password {
-            right: auto;
-            left: 12px;
+        [dir="rtl"] .rtl\:left-0 {
+            left: 0;
         }
 
-        [dir="rtl"] .checkbox-group {
-            flex-direction: row-reverse;
+        [dir="rtl"] .rtl\:rotate-180 {
+            transform: rotate(180deg);
         }
 
-        [dir="rtl"] .login-link a {
+        [dir="rtl"] .me-2 {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+
+        [dir="rtl"] .ms-2 {
+            margin-right: 0.5rem;
             margin-left: 0;
-            margin-right: 5px;
         }
 
-        [dir="rtl"] .social-login {
-            flex-direction: row-reverse;
+        /* Fix autofill */
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #f9f9f9 inset !important;
         }
 
-        @media (max-width: 450px) {
-            [dir="rtl"] .top-controls {
-                left: 12px;
-                right: auto;
+        .dark input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px #0a0a0a inset !important;
+            -webkit-text-fill-color: #e5e5e5 !important;
+        }
+
+        /* Glass card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(2px);
+            transition: all 0.2s ease;
+        }
+
+        .dark .glass-card {
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Animated border gradient */
+        .animated-border {
+            position: relative;
+            background: linear-gradient(60deg, #6B8E23, #D48A2A, #6B8E23);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
             }
 
-            [dir="rtl"] .toggle-password {
-                left: 8px;
-                right: auto;
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
             }
         }
 
-        .signup-card * {
-            max-width: 100%;
+        /* Extreme mobile optimization for 360px */
+        @media (max-width: 400px) {
+
+            .glass-card .p-6,
+            .glass-card .p-8,
+            .glass-card>div:last-child {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .glass-card {
+                border-radius: 1.5rem !important;
+            }
+
+            .glass-card .text-center.mb-6 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .glass-card .flex.justify-center.gap-3 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .glass-card form.space-y-5 {
+                gap: 0.75rem !important;
+            }
+
+            .glass-card .mt-7 {
+                margin-top: 0.5rem !important;
+            }
         }
 
-        input,
-        button {
-            font-family: inherit;
+        @media (max-height: 850px) and (max-width: 400px) {
+            .glass-card .text-center.mb-6 {
+                margin-bottom: 0.25rem !important;
+            }
+
+            .glass-card .text-2xl {
+                font-size: 1.25rem !important;
+            }
+
+            .social-login-btn {
+                height: 2.25rem !important;
+            }
+
+            .glass-card input {
+                padding-top: 0.4rem !important;
+                padding-bottom: 0.4rem !important;
+            }
+
+            .glass-card button[type="submit"] {
+                padding-top: 0.4rem !important;
+                padding-bottom: 0.4rem !important;
+            }
+
+            .glass-card form {
+                gap: 0.5rem !important;
+            }
+
+            .glass-card .mt-7 {
+                margin-top: 0.25rem !important;
+            }
         }
 
-        /* Popcorn kernel accent */
-        .popcorn-accent {
+        body {
+            overflow-x: hidden;
+        }
+
+        .w-screen {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        /* RTL text alignment */
+        [dir="rtl"] input,
+        [dir="rtl"] label,
+        [dir="rtl"] button,
+        [dir="rtl"] p,
+        [dir="rtl"] h2 {
+            text-align: right;
+        }
+
+        [dir="rtl"] .text-center {
             text-align: center;
-            margin-top: 8px;
-            font-size: 10px;
-            color: #6B8E23;
+        }
+
+        [dir="rtl"] .me-2 {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+
+        [dir="rtl"] .ms-2 {
+            margin-right: 0.5rem;
+            margin-left: 0;
+        }
+
+        .max-h-[95dvh] {
+            max-height: 95dvh;
+        }
+
+        [dir="rtl"] .rounded-l-2xl {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        [dir="rtl"] .rounded-r-2xl {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+
+        button,
+        a,
+        [role="button"] {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Theme toggle icon visibility */
+        .dark .fa-sun {
+            display: none !important;
+        }
+
+        .dark .fa-moon {
+            display: inline-block !important;
+        }
+
+        .fa-moon {
+            display: none;
+        }
+
+        .fa-sun {
+            display: inline-block;
         }
     </style>
 </head>
 
-<body>
+<body
+    class="bg-warm-gray dark:bg-dark-gray min-h-[100dvh] w-screen overflow-y-auto flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-6 sm:py-12">
 
-    <!-- Top controls -->
-    <div class="top-controls">
-        <button class="control-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Dark mode toggle">
-            <i class="fas fa-moon" id="themeIcon"></i>
+    <!-- Rich overlay gradients -->
+    <div
+        class="fixed inset-0 bg-gradient-to-br from-warm-gray/80 via-transparent to-warm-gray/85 dark:from-dark-gray/80 dark:via-dark-gray/50 dark:to-dark-gray/85">
+    </div>
+    <div class="fixed inset-0 opacity-30 pointer-events-none"
+        style="background: radial-gradient(circle at 30% 40%, rgba(107,142,35,0.15) 0%, transparent 60%);"></div>
+    <div class="fixed inset-0 opacity-20 pointer-events-none mix-blend-multiply dark:mix-blend-normal"
+        style="background: radial-gradient(circle at 70% 60%, rgba(107,142,35,0.12) 0%, transparent 55%);"></div>
+
+    <!-- Top Controls (RTL / Theme) -->
+    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-3 z-50 pointer-events-auto">
+        <button id="rtl-toggle-signup"
+            class="w-10 h-10 rounded-full bg-white/80 dark:bg-black/60 backdrop-blur-md shadow-sm border border-popcorn-gold/40 flex items-center justify-center text-dark-gray dark:text-white hover:text-popcorn-gold hover:border-popcorn-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-popcorn-gold active:scale-95"
+            title="Toggle RTL">
+            <i class="fas fa-exchange-alt text-xs"></i>
         </button>
-        <button class="control-btn" id="rtlToggle" title="Toggle RTL Layout" aria-label="RTL toggle">
-            <i class="fas fa-exchange-alt"></i>
-        </button>
+        <button id="theme-toggle-signup"
+            class="w-10 h-10 rounded-full bg-white/80 dark:bg-black/60 backdrop-blur-md shadow-sm border border-popcorn-gold/40 flex items-center justify-center text-dark-gray dark:text-white hover:text-popcorn-gold hover:border-popcorn-gold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-popcorn-gold active:scale-95"
+            title="Toggle Theme">
+            <i class="fas fa-sun text-sm"></i>
+            <i class="fas fa-moon hidden text-sm"></i>
     </div>
 
-    <div class="container">
-        <div class="signup-card">
-            <div class="logo">
-                <a href="index.html">
-                    <span>Popistry</span>
+    <main
+        class="w-full max-w-[950px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row rtl:flex-row-reverse border border-gray-200 dark:border-white/10 relative z-10 overflow-hidden md:h-[480px]">
+
+        <!-- Left Panel: Signup Form -->
+        <div class="w-full md:w-1/2 p-5 sm:p-6 lg:p-8 flex flex-col justify-center bg-white/95 dark:bg-dark-gray/95">
+
+            <!-- Brand Logo & Welcome Header -->
+            <div class="text-center mb-3 flex flex-col items-center">
+                <a href="index.html" class="inline-block mb-3 select-none">
+                    <span class="text-2xl font-serif font-bold italic text-popcorn-gold tracking-wide">Popistry</span>
                 </a>
+                <h2 class="text-xl sm:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-0.5">Join the
+                    Crunch Club</h2>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-light">Get 10% off your first order + exclusive
+                    drops</p>
             </div>
 
-            <div class="title">
-                <h1>Join the Crunch Club</h1>
-                <p>Get 10% off your first order + exclusive flavor drops</p>
+            <!-- Social login row -->
+            <div class="flex justify-center gap-3 sm:gap-4 mb-3">
+                <button id="googleSignup"
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    <i class="fab fa-google text-[#DB4437] text-sm group-hover:scale-105 transition-transform"></i>
+                </button>
+                <button id="facebookSignup"
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    <i class="fab fa-facebook-f text-[#1877F2] text-sm group-hover:scale-105 transition-transform"></i>
+                </button>
+                <button id="appleSignup"
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    <i
+                        class="fab fa-apple text-gray-900 dark:text-white text-base group-hover:scale-105 transition-transform"></i>
+                </button>
             </div>
 
-            <div class="social-login">
-                <button class="social-btn google" id="googleSignup">
-                    <i class="fab fa-google"></i><span>Google</span>
-                </button>
-                <button class="social-btn facebook" id="facebookSignup">
-                    <i class="fab fa-facebook-f"></i><span>Facebook</span>
-                </button>
-                <button class="social-btn apple" id="appleSignup">
-                    <i class="fab fa-apple"></i><span>Apple</span>
-                </button>
-            </div>
-
-            <div class="divider"><span>Or sign up with email</span></div>
-
-            <form id="signupForm" novalidate>
-                <div class="form-group">
-                    <label>FULL NAME</label>
-                    <input type="text" id="fullname" placeholder="John Smith" autocomplete="name">
+            <div class="relative flex items-center justify-center my-2">
+                <div class="w-full border-t border-gray-200 dark:border-white/10"></div>
+                <div
+                    class="absolute bg-white dark:bg-dark-gray px-3 text-[9px] font-bold text-gray-400 tracking-widest uppercase">
+                    Or sign up with email
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label>EMAIL ADDRESS</label>
-                    <input type="email" id="email" placeholder="hello@popistry.com" autocomplete="email" required>
-                </div>
+            <form class="space-y-3" id="signupForm" novalidate>
+                <!-- Row 1: Name & Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="text-left">
+                        <label
+                            class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                            <i class="fas fa-user me-1 text-popcorn-gold"></i> Full Name
+                        </label>
+                        <input type="text" id="fullname" placeholder="John Smith" autocomplete="name"
+                            class="w-full px-3 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all">
+                    </div>
 
-                <div class="form-group">
-                    <label>PASSWORD</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" placeholder="Create a strong password"
-                            autocomplete="new-password" required>
-                        <button type="button" class="toggle-password" data-target="password" aria-label="Show password">
-                            <i class="fas fa-eye-slash"></i>
-                        </button>
+                    <div class="text-left">
+                        <label
+                            class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                            <i class="fas fa-envelope me-1 text-popcorn-gold"></i> Email Address
+                        </label>
+                        <input type="email" id="email" placeholder="hello@popistry.com" autocomplete="email" required
+                            class="w-full px-3 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>CONFIRM PASSWORD</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="confirmPassword" placeholder="Repeat your password"
-                            autocomplete="new-password" required>
-                        <button type="button" class="toggle-password" data-target="confirmPassword"
-                            aria-label="Show confirm password">
-                            <i class="fas fa-eye-slash"></i>
-                        </button>
+                <!-- Row 2: Password & Confirm Password -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="text-left">
+                        <label
+                            class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                            <i class="fas fa-lock me-1 text-popcorn-gold"></i> Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="password" placeholder="Create password"
+                                autocomplete="new-password" required
+                                class="w-full px-3 py-2 pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all">
+                            <button type="button"
+                                class="toggle-password absolute inset-y-0 right-0 pe-3 flex items-center text-gray-400 hover:text-popcorn-gold transition-colors focus:outline-none ltr:right-0 rtl:left-0 rtl:right-auto rtl:ps-3 rtl:pe-0"
+                                aria-label="Show password">
+                                <i class="fas fa-eye-slash text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-left">
+                        <label
+                            class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                            <i class="fas fa-lock me-1 text-popcorn-gold"></i> Confirm Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="confirmPassword" placeholder="Repeat password"
+                                autocomplete="new-password" required
+                                class="w-full px-3 py-2 pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all">
+                            <button type="button"
+                                class="toggle-password absolute inset-y-0 right-0 pe-3 flex items-center text-gray-400 hover:text-popcorn-gold transition-colors focus:outline-none ltr:right-0 rtl:left-0 rtl:right-auto rtl:ps-3 rtl:pe-0"
+                                aria-label="Show confirm password">
+                                <i class="fas fa-eye-slash text-xs"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>BIRTHDAY (FOR SPECIAL OFFERS)</label>
-                    <input type="date" id="birthday" placeholder="MM/DD/YYYY">
-                </div>
-
-
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="termsCheckbox" required>
-                    <label for="termsCheckbox">
-                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                <div class="flex items-center justify-between pt-0.5 flex-wrap gap-2">
+                    <label class="flex items-center cursor-pointer group">
+                        <input type="checkbox" id="termsCheckbox" required
+                            class="w-3.5 h-3.5 rounded border-gray-300 text-popcorn-gold focus:ring-popcorn-gold cursor-pointer bg-transparent">
+                        <span
+                            class="ms-2 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-dark-gray dark:group-hover:text-white transition-colors">
+                            I agree to the <a href="#"
+                                class="font-bold text-popcorn-gold hover:text-popcorn-deep">Terms</a> and <a href="#"
+                                class="font-bold text-popcorn-gold hover:text-popcorn-deep">Privacy Policy</a>
+                        </span>
                     </label>
                 </div>
 
-                <button type="submit" class="btn-create">Create Account →</button>
+                <button type="submit"
+                    class="btn-shine w-full mt-2 h-10 bg-popcorn-gold hover:bg-popcorn-deep text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-popcorn-gold active:scale-[0.98]">
+                    <i
+                        class="fas fa-user-plus text-xs rtl:rotate-180 transform group-hover:scale-110 transition-transform"></i>
+                    Create Account
+                </button>
             </form>
 
-            <div class="login-link">
-                Already have an account? <a href="login.html">Log In</a>
+            <div class="mt-4 text-center">
+                <p class="text-[12px] font-medium text-gray-500 dark:text-gray-400">Already have an account?
+                    <a href="login.html"
+                        class="font-bold text-popcorn-gold hover:text-popcorn-deep transition-colors border-b border-transparent hover:border-popcorn-gold pb-0.5 ml-1">Log
+                        In →</a>
+                </p>
             </div>
-
         </div>
-    </div>
+
+        <!-- Right Panel: Popcorn Artistry Atmosphere -->
+        <div
+            class="hidden md:flex w-full md:w-1/2 relative text-white flex-col items-center justify-center overflow-hidden rounded-r-2xl rtl:rounded-r-none rtl:rounded-l-2xl border-l border-gray-200 dark:border-white/10">
+            <img src="https://ak2.picdn.net/shutterstock/videos/1021569022/thumb/1.jpg" alt="Gourmet popcorn"
+                class="absolute inset-0 w-full h-full object-cover slow-zoom">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-1 bg-popcorn-gold/80 rtl:right-auto rtl:left-0"></div>
+
+            <div class="relative z-10 text-center p-6 lg:p-8">
+                <a href="index.html" class="cursor-pointer no-underline hover:opacity-80 transition-opacity">
+                    <span
+                        class="text-4xl lg:text-5xl font-serif font-bold italic text-popcorn-gold tracking-widest-xl"></span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-auto max-w-[90vw]"></div>
 
     <script>
-        // Toast helper
-        function showToast(message) {
-            const existingToast = document.querySelector('.toast');
-            if (existingToast) existingToast.remove();
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            setTimeout(() => { if (toast && toast.parentNode) toast.remove(); }, 2600);
-        }
+            (function () {
+                // Toast helper
+                function showToast(message, type = 'success') {
+                    const container = document.getElementById('toastContainer');
+                    if (!container) return;
+                    const toast = document.createElement('div');
+                    let bgColor = 'bg-emerald-600';
+                    let icon = '<i class="fas fa-check-circle text-white text-sm"></i>';
+                    if (type === 'error') { bgColor = 'bg-red-500'; icon = '<i class="fas fa-times-circle text-white text-sm"></i>'; }
+                    else if (type === 'warning') { bgColor = 'bg-amber-500'; icon = '<i class="fas fa-exclamation-triangle text-white text-sm"></i>'; }
+                    else if (type === 'info') { bgColor = 'bg-popcorn-gold'; icon = '<i class="fas fa-info-circle text-white text-sm"></i>'; }
+                    toast.className = `toast-animation mb-2 px-5 py-3 rounded-xl shadow-lg text-xs sm:text-sm font-medium flex items-center gap-2 pointer-events-auto ${bgColor} text-white max-w-full`;
+                    toast.innerHTML = `${icon} <span class="break-words">${message}</span>`;
+                    container.appendChild(toast);
+                    setTimeout(() => { if (toast && toast.remove) toast.remove(); }, 2600);
+                }
 
-        // Password visibility toggles
-        function initPasswordToggles() {
-            document.querySelectorAll('.toggle-password').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const wrapper = btn.closest('.password-wrapper');
-                    if (!wrapper) return;
-                    const input = wrapper.querySelector('input');
-                    const icon = btn.querySelector('i');
-                    if (input.type === 'password') {
-                        input.type = 'text';
-                        if (icon) icon.className = 'fas fa-eye';
+                // Password visibility toggles
+                function initPasswordToggles() {
+                    document.querySelectorAll('.toggle-password').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const wrapper = btn.closest('.relative');
+                            if (!wrapper) return;
+                            const input = wrapper.querySelector('input');
+                            const icon = btn.querySelector('i');
+                            if (input.type === 'password') {
+                                input.type = 'text';
+                                if (icon) {
+                                    icon.className = 'fas fa-eye';
+                                }
+                            } else {
+                                input.type = 'password';
+                                if (icon) {
+                                    icon.className = 'fas fa-eye-slash';
+                                }
+                            }
+                        });
+                    });
+                }
+
+                // Theme toggle
+                const themeToggle = document.getElementById('theme-toggle-signup');
+                const htmlTag = document.documentElement;
+                function updateThemeIcons() {
+                    const isDark = htmlTag.classList.contains('dark');
+                    const sunIcon = document.querySelector('#theme-toggle-signup .fa-sun');
+                    const moonIcon = document.querySelector('#theme-toggle-signup .fa-moon');
+                    if (sunIcon && moonIcon) {
+                        if (isDark) {
+                            sunIcon.classList.add('hidden');
+                            moonIcon.classList.remove('hidden');
+                        } else {
+                            sunIcon.classList.remove('hidden');
+                            moonIcon.classList.add('hidden');
+                        }
+                    }
+                }
+                function toggleTheme() {
+                    if (htmlTag.classList.contains('dark')) {
+                        htmlTag.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                        showToast('Light mode activated — enjoy!', 'info');
                     } else {
-                        input.type = 'password';
-                        if (icon) icon.className = 'fas fa-eye-slash';
+                        htmlTag.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                        showToast('Dark mode activated — cozy vibes', 'info');
+                    }
+                    updateThemeIcons();
+                }
+                if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+                // Initialize theme
+                if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    htmlTag.classList.add('dark');
+                } else {
+                    htmlTag.classList.remove('dark');
+                }
+                updateThemeIcons();
+
+                // RTL Toggle
+                const rtlToggle = document.getElementById('rtl-toggle-signup');
+                function applyRTLStyles(isRtl) {
+                    if (isRtl) {
+                        htmlTag.setAttribute('dir', 'rtl');
+                        localStorage.setItem('direction', 'rtl');
+                    } else {
+                        htmlTag.removeAttribute('dir');
+                        localStorage.setItem('direction', 'ltr');
+                    }
+                }
+                function toggleRTL() {
+                    const currentDir = htmlTag.getAttribute('dir');
+                    if (currentDir === 'rtl') {
+                        applyRTLStyles(false);
+                        showToast('LTR layout activated', 'info');
+                    } else {
+                        applyRTLStyles(true);
+                        showToast('RTL layout for right-to-left languages', 'info');
+                    }
+                }
+                if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+                if (localStorage.getItem('direction') === 'rtl') {
+                    htmlTag.setAttribute('dir', 'rtl');
+                } else if (localStorage.getItem('direction') === 'ltr') {
+                    htmlTag.removeAttribute('dir');
+                }
+
+                // Social sign-up demo handlers
+                const socialHandlers = {
+                    google: 'Google', facebook: 'Facebook', apple: 'Apple'
+                };
+                Object.keys(socialHandlers).forEach(provider => {
+                    const btn = document.getElementById(`${provider}Signup`);
+                    if (btn) {
+                        btn.addEventListener('click', () => {
+                            showToast(`${socialHandlers[provider]} sign-up — coming soon! Use email to get 10% off.`, 'info');
+                        });
                     }
                 });
-            });
-        }
 
-        // Dark Mode Logic
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const bodyEl = document.body;
+                // Form validation and account creation
+                const signupForm = document.getElementById('signupForm');
+                if (signupForm) {
+                    signupForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
 
-        function updateThemeIcon() {
-            if (bodyEl.classList.contains('dark-mode')) {
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-            }
-        }
+                        const fullname = document.getElementById('fullname').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                        const password = document.getElementById('password').value;
+                        const confirm = document.getElementById('confirmPassword').value;
+                        const termsChecked = document.getElementById('termsCheckbox').checked;
 
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                bodyEl.classList.toggle('dark-mode');
-                localStorage.setItem('theme', bodyEl.classList.contains('dark-mode') ? 'dark' : 'light');
-                updateThemeIcon();
-                showToast(bodyEl.classList.contains('dark-mode') ? 'Dark mode activated — cozy snacking vibes' : 'Light mode activated — fresh & bright!');
-            });
-        }
+                        if (!fullname || fullname.length < 2) {
+                            return showToast('Please enter your full name', 'warning');
+                        }
+                        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+                        if (!emailPattern.test(email)) {
+                            return showToast('Please enter a valid email address', 'error');
+                        }
+                        if (!password || password.length < 6) {
+                            return showToast('Password must be at least 6 characters', 'warning');
+                        }
+                        if (password !== confirm) {
+                            return showToast('Passwords do not match', 'error');
+                        }
+                        if (!termsChecked) {
+                            return showToast('Please agree to the Terms of Service', 'warning');
+                        }
 
-        // Load theme preference
-        if (localStorage.getItem('theme') === 'dark') bodyEl.classList.add('dark-mode');
-        updateThemeIcon();
-
-        // RTL Toggle
-        const rtlToggle = document.getElementById('rtlToggle');
-        if (rtlToggle) {
-            rtlToggle.addEventListener('click', () => {
-                const currentDir = document.documentElement.getAttribute('dir');
-                if (currentDir === 'rtl') {
-                    document.documentElement.removeAttribute('dir');
-                    localStorage.setItem('dir', 'ltr');
-                    showToast('Layout set to LTR');
-                } else {
-                    document.documentElement.setAttribute('dir', 'rtl');
-                    localStorage.setItem('dir', 'rtl');
-                    showToast('Layout set to RTL');
-                }
-            });
-        }
-        if (localStorage.getItem('dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
-
-        // Social sign-up demo handlers
-        const socialHandlers = {
-            google: 'Google', facebook: 'Facebook', apple: 'Apple'
-        };
-        Object.keys(socialHandlers).forEach(provider => {
-            const btn = document.getElementById(`${provider}Signup`);
-            if (btn) {
-                btn.addEventListener('click', () => {
-                    showToast(`${socialHandlers[provider]} sign-up — coming soon! Use email to get 10% off.`);
-                });
-            }
-        });
-
-        // Form validation and account creation
-        const signupForm = document.getElementById('signupForm');
-        if (signupForm) {
-            signupForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const fullname = document.getElementById('fullname').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const password = document.getElementById('password').value;
-                const confirm = document.getElementById('confirmPassword').value;
-                const termsChecked = document.getElementById('termsCheckbox').checked;
-
-                if (!fullname || fullname.length < 2) {
-                    return showToast('🍿 Please enter your full name');
-                }
-                const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
-                if (!emailPattern.test(email)) {
-                    return showToast('🍿 Please enter a valid email address');
-                }
-                if (!password || password.length < 6) {
-                    return showToast('🍿 Password must be at least 6 characters');
-                }
-                if (password !== confirm) {
-                    return showToast('🍿 Passwords do not match');
-                }
-                if (!termsChecked) {
-                    return showToast('🍿 Please agree to the Terms of Service');
+                        const firstName = fullname.split(' ')[0] || "Snack Lover";
+                        showToast(`🎉 Welcome ${firstName}! Check your email for 10% off your first order.`, 'success');
+                    });
                 }
 
-                const firstName = fullname.split(' ')[0] || "Snack Lover";
-                showToast(`🎉 Welcome ${firstName}! Check your email for 10% off your first order.`);
+                // Fix for keyboard open on mobile
+                const mainCard = document.querySelector('main');
+                if (mainCard) {
+                    const inputs = mainCard.querySelectorAll('input');
+                    inputs.forEach(inp => {
+                        inp.addEventListener('focus', () => {
+                            setTimeout(() => {
+                                if (mainCard) {
+                                    mainCard.scrollTo({ top: mainCard.scrollHeight, behavior: 'smooth' });
+                                }
+                            }, 200);
+                        });
+                    });
+                }
 
-                // Reset form (optional)
-                // signupForm.reset();
-            });
-        }
-
-        // Prevent body scroll while allowing scroll inside card
-        function preventBodyScrollOnOuter(e) {
-            const insideCard = e.target.closest('.signup-card');
-            if (!insideCard) {
-                e.preventDefault();
-                return false;
-            }
-            return true;
-        }
-
-        document.body.addEventListener('touchmove', preventBodyScrollOnOuter, { passive: false });
-        document.body.addEventListener('wheel', (e) => {
-            const insideScrollable = e.target.closest('.signup-card');
-            if (!insideScrollable) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        initPasswordToggles();
-
-        const signupCard = document.querySelector('.signup-card');
-        if (signupCard) {
-            signupCard.addEventListener('wheel', (e) => {
-                e.stopPropagation();
-            }, { passive: false });
-        }
+                initPasswordToggles();
+            })();
     </script>
 </body>
 

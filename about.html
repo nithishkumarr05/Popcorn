@@ -21,6 +21,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -376,81 +387,203 @@
         </div>
     </section>
 
-    <!-- SECTION 2: Our Philosophy / Mission -->
-    <section class="py-20 lg:py-28 bg-white dark:bg-black">
-        <div class="max-w-6xl mx-auto px-5">
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div class="order-2 md:order-1">
-                    <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block
-">Why We
-                        Pop</span>
-                    <h2
-                        class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mb-6">
-                        Snacking With Intention</h2>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">We believe that every kernel tells
-                        a story. That’s why we source heirloom, non-GMO corn directly from regenerative family farms.
-                        Our process is slow, deliberate, and never rushed — kettle-cooked in micro-batches to unlock the
-                        perfect crunch.</p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">No artificial colors, no
-                        preservatives, no compromise. Just real butter, real spices, and real ingredients that you can
-                        see, taste, and feel good about.</p>
-                    <div class="flex items-center gap-3 mt-6">
-                        <i class="fas fa-check-circle text-popcorn-gold text-xl"></i>
-                        <span class="text-sm uppercase tracking-wide font-bold text-dark-gray dark:text-white">Certified
-                            B Corp Pending</span>
+    <!-- SECTION 2: Our Philosophy & Origin Story -->
+    <section class="py-20 lg:py-32 bg-white dark:bg-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div class="lg:col-span-7">
+                    <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-4 block">Our Origin Story</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                        Born from a Quest for the <span class="italic font-light text-popcorn-gold">Perfect Crunch</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 font-light">
+                        Popistry began in 2018 not in a corporate boardroom, but in a small family kitchen in Los Angeles. Frustrated by store-bought popcorn that was either stale, loaded with chemical powders, or choked with tough unpopped hulls, we set out to restore popcorn to its rightful place as a premium culinary experience.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 font-light">
+                        Our journey took us to the heartland of Iowa, where we partnered with generational family farmers who still cultivated heirloom, non-GMO corn. By marrying these superior kernels with chef-grade ingredients—like grass-fed European butter, hand-harvested sea salt, and aged Parmigiano-Reggiano—we crafted a snack that is not only healthier but radically more delicious.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gray-100 dark:border-white/5">
+                        <div>
+                            <h4 class="text-2xl font-serif font-bold text-popcorn-gold">100% Heirloom</h4>
+                            <p class="text-xs text-gray-500 mt-1">Directly sourced, non-GMO regenerative corn</p>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-serif font-bold text-popcorn-gold">No Fake Powders</h4>
+                            <p class="text-xs text-gray-500 mt-1">Real whole ingredients for authentic taste</p>
+                        </div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 relative">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-                        <img src="assests/ab.jpg" alt="Artisan making popcorn"
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-4 bg-popcorn-gold/10 rounded-[2.5rem] blur-xl pointer-events-none"></div>
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-white/5 aspect-[4/5]">
+                        <img src="assests/pop2.jpg" alt="Artisan making popcorn"
                             class="w-full h-full object-cover hover:scale-105 transition duration-700">
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: Values / Pillars (3 Cards) -->
-    <section class="py-20 lg:py-28 bg-warm-gray dark:bg-[#080808]">
+    <!-- SECTION 3: The Four Pillars of Popistry Excellence -->
+    <section class="py-20 lg:py-32 bg-warm-gray dark:bg-[#080808] border-t border-b border-gray-100 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-5">
-            <div class="text-center mb-14">
-                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block
-">Core
-                    Values</span>
-                <h2 class=" text-3xl md:text-5xl font-serif font-bold mt-3 text-dark-gray dark:text-white">What Drives
-                    Us
-                </h2>
-                <div class="w-20 h-0.5 bg-popcorn-gold mx-auto mt-5"></div>
+            <div class="text-center mb-16">
+                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-4 block">The Craft</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white">What Makes Us Special</h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm mt-4 font-light">We take the road less traveled. Four principles define our pursuit of the ultimate crunch.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="bg-white dark:bg-[#111111] p-8 rounded-3xl shadow-xl text-center hover-scale transition-all border border-gray-100 dark:border-white/5">
-                    <div class="w-16 h-16 bg-popcorn-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-hand-holding-heart text-2xl text-popcorn-gold"></i>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Sourcing -->
+                <div class="bg-white dark:bg-[#111111] p-8 rounded-3xl border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-popcorn-gold/10 flex items-center justify-center text-popcorn-gold mb-6">
+                        <i class="fas fa-map-location-dot text-lg"></i>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white mb-3">Radical Transparency
+                    <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white mb-3">Generational Sourcing</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">
+                        We skip mass-market grain silos. Our heirloom kernels are grown by family farmers utilizing crop-rotation methods that nourish the soil.
+                    </p>
+                </div>
+
+                <!-- Handcrafted Process -->
+                <div class="bg-white dark:bg-[#111111] p-8 rounded-3xl border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-popcorn-gold/10 flex items-center justify-center text-popcorn-gold mb-6">
+                        <i class="fas fa-fire-burner text-lg"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white mb-3">Slow Hand-Popped</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">
+                        We don't use giant air-blasters. Every batch is popped at precise temperatures in small kettles and hand-tossed to ensure even seasoning.
+                    </p>
+                </div>
+
+                <!-- Pure Ingredients -->
+                <div class="bg-white dark:bg-[#111111] p-8 rounded-3xl border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-popcorn-gold/10 flex items-center justify-center text-popcorn-gold mb-6">
+                        <i class="fas fa-basket-shopping text-lg"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white mb-3">Chef-Grade Ingredients</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">
+                        No synthetic flavor powders or artificial colors. We use aged white cheddar, real cocoa, fresh herbs, and single-origin Madagascar vanilla.
+                    </p>
+                </div>
+
+                <!-- Meticulous Quality -->
+                <div class="bg-white dark:bg-[#111111] p-8 rounded-3xl border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-popcorn-gold/10 flex items-center justify-center text-popcorn-gold mb-6">
+                        <i class="fas fa-award text-lg"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white mb-3">Sifted Perfection</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed font-light">
+                        Every batch goes through our proprietary triple-sifter. It separates unpopped kernels and tough hulls, leaving only light, perfect crunch.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Popistry vs Ordinary Snacks -->
+    <section class="py-20 lg:py-32 bg-white dark:bg-black">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-16">
+                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-4 block">The Comparison</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white">Why Choose Popistry?</h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm mt-4 font-light">See how our commitment to culinary standards measures up against ordinary mass-market snacks.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Popistry Column -->
+                <div class="bg-popcorn-gold/5 dark:bg-[#111111] border border-popcorn-gold/30 rounded-[2.5rem] p-8 lg:p-12 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-popcorn-gold text-white font-bold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl">
+                        Our Standard
+                    </div>
+                    <h3 class="font-serif text-2xl lg:text-3xl font-bold text-dark-gray dark:text-white mb-8 flex items-center gap-3">
+                        <span class="text-popcorn-gold italic font-bold">Popistry</span>
                     </h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">We list every ingredient — no
-                        hidden additives. You deserve to know exactly what you're eating.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-popcorn-gold/15 flex items-center justify-center text-popcorn-gold shrink-0 mt-0.5">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-dark-gray dark:text-white uppercase tracking-wider mb-1">Heirloom Non-GMO Corn</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Directly sourced kernels that pop into large, round shapes with minimal tough hulls.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-popcorn-gold/15 flex items-center justify-center text-popcorn-gold shrink-0 mt-0.5">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-dark-gray dark:text-white uppercase tracking-wider mb-1">100% Real Whole Ingredients</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Fresh-ground spices, real European butter, aged cheeses, and pure extracts.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-popcorn-gold/15 flex items-center justify-center text-popcorn-gold shrink-0 mt-0.5">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-dark-gray dark:text-white uppercase tracking-wider mb-1">Kettle-Cooked in Micro-Batches</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Made by hand in small quantities, ensuring even flavor coatings and ultimate freshness.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-popcorn-gold/15 flex items-center justify-center text-popcorn-gold shrink-0 mt-0.5">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-dark-gray dark:text-white uppercase tracking-wider mb-1">Zero-Waste Compostable Packaging</h4>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">Bags made from plant-based materials that break down fully in home compost.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div
-                    class="bg-white dark:bg-[#111111] p-8 rounded-3xl shadow-xl text-center hover-scale transition-all border border-gray-100 dark:border-white/5 transform md:-translate-y-3">
-                    <div class="w-16 h-16 bg-popcorn-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-leaf text-2xl text-popcorn-gold"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white mb-3">Planet First</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">100% compostable packaging +
-                        carbon-neutral shipping. Every order gives back to reforestation.</p>
-                </div>
-                <div
-                    class="bg-white dark:bg-[#111111] p-8 rounded-3xl shadow-xl text-center hover-scale transition-all border border-gray-100 dark:border-white/5">
-                    <div class="w-16 h-16 bg-popcorn-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-users text-2xl text-popcorn-gold"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white mb-3">Community Craft</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">We partner with local farms and
-                        give 5% of profits to food access programs nationwide.</p>
+
+                <!-- Regular Snacks Column -->
+                <div class="bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/5 rounded-[2.5rem] p-8 lg:p-12 shadow-sm">
+                    <h3 class="font-serif text-2xl lg:text-3xl font-bold text-gray-400 dark:text-gray-500 mb-8">
+                        Ordinary Snacks
+                    </h3>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 shrink-0 mt-0.5">
+                                <i class="fas fa-times text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">Mass-Produced GMO Hybrid Corn</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">Cheap corn optimized only for high yields, leaving thick, tooth-catching hulls.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 shrink-0 mt-0.5">
+                                <i class="fas fa-times text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">Synthetic Powders & MSG</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">Artificial cheese flavorings, chemical dye numbers, and heavy preservatives.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 shrink-0 mt-0.5">
+                                <i class="fas fa-times text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">Industrial Continuous Air-Popping</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">Processed in high-speed plants, sitting on warehouse shelves for months.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 shrink-0 mt-0.5">
+                                <i class="fas fa-times text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-1">Multi-Layer Plastic Foil Bags</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">Standard plastic packaging that cannot be recycled and ends up in landfills for centuries.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -620,10 +753,19 @@
                 </div>
                 <div class="lg:col-span-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-gray-400">Connect</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="mailto:hello@popistry.com" class="text-popcorn-gold">hello@popistry.com</a></li>
-                        <li>+1 (424) 269-7880</li>
-                        <li>Los Angeles, CA — Ships Nationwide</li>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-popcorn-gold shrink-0"></i>
+                            <a href="mailto:hello@popistry.com" class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-popcorn-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-popcorn-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-popcorn-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
                     </ul>
                 </div>
             </div>

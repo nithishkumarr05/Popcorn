@@ -24,6 +24,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -350,15 +361,15 @@
 </head>
 
 <body
-    class="bg-warm-gray dark:bg-dark-gray h-[100dvh] w-screen overflow-hidden flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-3 sm:py-8">
+    class="bg-warm-gray dark:bg-dark-gray min-h-[100dvh] w-screen overflow-y-auto flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-6 sm:py-12">
 
     <!-- Rich overlay gradients -->
     <div
-        class="absolute inset-0 bg-gradient-to-br from-warm-gray/80 via-transparent to-warm-gray/85 dark:from-dark-gray/80 dark:via-dark-gray/50 dark:to-dark-gray/85">
+        class="fixed inset-0 bg-gradient-to-br from-warm-gray/80 via-transparent to-warm-gray/85 dark:from-dark-gray/80 dark:via-dark-gray/50 dark:to-dark-gray/85">
     </div>
-    <div class="absolute inset-0 opacity-30 pointer-events-none"
+    <div class="fixed inset-0 opacity-30 pointer-events-none"
         style="background: radial-gradient(circle at 30% 40%, rgba(107,142,35,0.15) 0%, transparent 60%);"></div>
-    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply dark:mix-blend-normal"
+    <div class="fixed inset-0 opacity-20 pointer-events-none mix-blend-multiply dark:mix-blend-normal"
         style="background: radial-gradient(circle at 70% 60%, rgba(107,142,35,0.12) 0%, transparent 55%);"></div>
 
     <!-- Top Controls (RTL / Theme) -->
@@ -378,85 +389,78 @@
 
     <!-- Main Card -->
     <main
-        class="w-full max-w-[1000px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row rtl:flex-row-reverse border border-gray-200 dark:border-white/10 relative z-10 max-h-[95dvh] md:h-[600px] overflow-y-auto overflow-x-hidden hide-scrollbar">
+        class="w-full max-w-[950px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row rtl:flex-row-reverse border border-gray-200 dark:border-white/10 relative z-10 overflow-hidden md:h-[480px]">
 
         <!-- Left Panel: Login Form -->
-        <div
-            class="w-full md:w-1/2 p-5 sm:p-8 lg:p-12 flex flex-col justify-center h-full bg-white/95 dark:bg-dark-gray/95">
+        <div class="w-full md:w-1/2 p-5 sm:p-6 lg:p-8 flex flex-col justify-center bg-white/95 dark:bg-dark-gray/95">
 
-            <!-- Mobile Logo -->
-            <div class="md:hidden text-center mb-5 pt-2">
-                <a href="index.html">
-                    <div class="text-3xl font-serif font-bold italic text-popcorn-gold">Popistry</div>
+            <!-- Brand Logo & Welcome Header -->
+            <div class="text-center mb-4 flex flex-col items-center">
+                <a href="index.html" class="inline-block mb-3 select-none">
+                    <span class="text-2xl font-serif font-bold italic text-popcorn-gold tracking-wide">Popistry</span>
                 </a>
-                <div class="w-12 h-px bg-popcorn-gold/50 mx-auto mt-3"></div>
-            </div>
-
-            <div class="text-center mb-6">
-                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-dark-gray dark:text-white mb-2">Welcome Back
+                <h2 class="text-xl sm:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-0.5">Welcome Back
                 </h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 font-light">Sign in to continue your snacking
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-light">Sign in to continue your snacking
                     journey.</p>
             </div>
 
             <!-- Social login row -->
-            <div class="flex justify-center md:justify-start gap-3 sm:gap-4 mb-7">
+            <div class="flex justify-center md:justify-start gap-3 sm:gap-4 mb-4">
                 <button
-                    class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
-                    <i
-                        class="fab fa-google text-[#DB4437] text-base sm:text-lg group-hover:scale-105 transition-transform"></i>
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    <i class="fab fa-google text-[#DB4437] text-sm group-hover:scale-105 transition-transform"></i>
                 </button>
                 <button
-                    class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
-                    <i
-                        class="fab fa-facebook-f text-[#1877F2] text-base sm:text-lg group-hover:scale-105 transition-transform"></i>
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    <i class="fab fa-facebook-f text-[#1877F2] text-sm group-hover:scale-105 transition-transform"></i>
                 </button>
                 <button
-                    class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
+                    class="social-login-btn flex-1 h-9 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-popcorn-gold/10 dark:hover:bg-popcorn-gold/20 transition-all duration-300 focus:ring-2 focus:ring-popcorn-gold focus:outline-none group active:scale-95">
                     <i
-                        class="fab fa-apple text-gray-900 dark:text-white text-xl pb-0.5 group-hover:scale-105 transition-transform"></i>
+                        class="fab fa-apple text-gray-900 dark:text-white text-base group-hover:scale-105 transition-transform"></i>
                 </button>
             </div>
 
-            <div class="relative flex items-center justify-center mt-12 mb-10">
+            <div class="relative flex items-center justify-center my-3">
                 <div class="w-full border-t border-gray-200 dark:border-white/10"></div>
                 <div
-                    class="absolute bg-white dark:bg-dark-gray px-4 text-[10px] font-bold text-gray-400 tracking-widest uppercase">
+                    class="absolute bg-white dark:bg-dark-gray px-3 text-[9px] font-bold text-gray-400 tracking-widest uppercase">
                     Or login with email
                 </div>
             </div>
 
-            <form class="space-y-5" id="loginForm">
+            <form class="space-y-3" id="loginForm">
                 <div class="text-left">
                     <label
-                        class="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-2">
-                        <i class="fas fa-envelope me-2 text-popcorn-gold"></i> Email Address
+                        class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                        <i class="fas fa-envelope me-1.5 text-popcorn-gold"></i> Email Address
                     </label>
                     <input type="email" id="loginEmail" placeholder="hello@popistry.com"
-                        class="w-full px-4 py-3.5 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all"
+                        class="w-full px-3 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all"
                         required>
                 </div>
 
                 <div class="text-left">
                     <label
-                        class="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-2">
-                        <i class="fas fa-lock me-2 text-popcorn-gold"></i> Password
+                        class="block text-[11px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1">
+                        <i class="fas fa-lock me-1.5 text-popcorn-gold"></i> Password
                     </label>
                     <div class="relative">
                         <input type="password" id="loginPassword" placeholder="••••••••"
-                            class="w-full px-4 py-3.5 pe-12 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all"
+                            class="w-full px-3 py-2 pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-popcorn-gold dark:text-white transition-all"
                             required>
                         <button type="button" id="togglePasswordBtn"
-                            class="absolute inset-y-0 right-0 pe-4 flex items-center text-gray-400 hover:text-popcorn-gold transition-colors focus:outline-none ltr:right-0 rtl:left-0 rtl:right-auto rtl:ps-4 rtl:pe-0">
-                            <i class="fas fa-eye-slash" id="toggleIcon"></i>
+                            class="absolute inset-y-0 right-0 pe-3 flex items-center text-gray-400 hover:text-popcorn-gold transition-colors focus:outline-none ltr:right-0 rtl:left-0 rtl:right-auto rtl:ps-3 rtl:pe-0">
+                            <i class="fas fa-eye-slash text-xs" id="toggleIcon"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between pt-1 flex-wrap gap-2">
+                <div class="flex items-center justify-between pt-0.5 flex-wrap gap-2">
                     <label class="flex items-center cursor-pointer group">
                         <input type="checkbox" id="rememberCheckbox"
-                            class="w-4 h-4 rounded border-gray-300 text-popcorn-gold focus:ring-popcorn-gold cursor-pointer bg-transparent">
+                            class="w-3.5 h-3.5 rounded border-gray-300 text-popcorn-gold focus:ring-popcorn-gold cursor-pointer bg-transparent">
                         <span
                             class="ms-2 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-dark-gray dark:group-hover:text-white transition-colors">Remember
                             me</span>
@@ -467,14 +471,15 @@
                 </div>
 
                 <button type="submit"
-                    class="btn-shine w-full mt-4 bg-popcorn-gold hover:bg-popcorn-deep text-white font-bold text-sm py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-popcorn-gold dark:focus:ring-offset-dark-gray active:scale-[0.98]">
-                    <i class="fas fa-popcorn rtl:rotate-180 transform group-hover:scale-110 transition-transform"></i>
+                    class="btn-shine w-full mt-2 h-10 bg-popcorn-gold hover:bg-popcorn-deep text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-popcorn-gold active:scale-[0.98]">
+                    <i
+                        class="fas fa-popcorn text-xs rtl:rotate-180 transform group-hover:scale-110 transition-transform"></i>
                     Sign In
                 </button>
             </form>
 
-            <div class="mt-7 text-center md:text-left">
-                <p class="text-[13px] font-medium text-gray-500 dark:text-gray-400">New to Popistry?
+            <div class="mt-4 text-center md:text-left">
+                <p class="text-[12px] font-medium text-gray-500 dark:text-gray-400">New to Popistry?
                     <a href="signup.html"
                         class="font-bold text-popcorn-gold hover:text-popcorn-deep transition-colors border-b border-transparent hover:border-popcorn-gold pb-0.5 ml-1">Create
                         an account →</a>
@@ -484,34 +489,17 @@
 
         <!-- Right Panel: Popcorn Artistry Atmosphere -->
         <div
-            class="hidden md:flex w-full md:w-1/2 relative text-white flex-col justify-between h-full overflow-hidden rounded-r-2xl rtl:rounded-r-none rtl:rounded-l-2xl">
+            class="hidden md:flex w-full md:w-1/2 relative text-white flex-col items-center justify-center overflow-hidden rounded-r-2xl rtl:rounded-r-none rtl:rounded-l-2xl border-l border-gray-200 dark:border-white/10">
             <img src="https://ak2.picdn.net/shutterstock/videos/1021569022/thumb/1.jpg" alt="Gourmet popcorn"
                 class="absolute inset-0 w-full h-full object-cover slow-zoom">
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
             <div class="absolute right-0 top-0 bottom-0 w-1 bg-popcorn-gold/80 rtl:right-auto rtl:left-0"></div>
 
-            <div class="relative z-10 text-left flex flex-col h-full justify-between p-8 lg:p-12">
-                <div>
-                    <div class="mb-12">
-                        <a href="index.html" class="cursor-pointer no-underline hover:opacity-80 transition-opacity">
-                            <span class="text-3xl font-serif font-bold italic text-popcorn-gold">Popistry</span>
-                        </a>
-                    </div>
-                    <h1 class="text-3xl lg:text-4xl font-serif font-bold leading-[1.1] mb-6">Artisanal<br>Snacking</h1>
-
-                </div>
-                <div
-                    class="relative z-10 mt-8 bg-black/40 backdrop-blur-md border border-popcorn-gold/30 rounded-2xl p-6 shadow-xl">
-                    <div class="flex text-popcorn-gold text-xs gap-1 mb-3"><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i></div>
-                    <p class="text-sm text-gray-200 font-light italic leading-relaxed mb-1">"The best gourmet popcorn
-                        I've ever tasted. The flavors are incredible and the presentation is stunning!"</p>
-                    <div
-                        class="text-[10px] font-bold tracking-wider text-white uppercase opacity-80 flex items-center gap-2">
-                        <span class="w-6 h-px bg-popcorn-gold"></span>SARAH M., LOYAL CUSTOMER
-                    </div>
-                </div>
+            <div class="relative z-10 text-center p-6 lg:p-8">
+                <a href="index.html" class="cursor-pointer no-underline hover:opacity-80 transition-opacity">
+                    <span
+                        class="text-4xl lg:text-5xl font-serif font-bold italic text-popcorn-gold tracking-widest-xl"></span>
+                </a>
             </div>
         </div>
     </main>

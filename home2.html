@@ -21,6 +21,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -329,64 +340,237 @@
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO - Elevated Snacking Experience -->
-    <section
-        class="relative min-h-screen flex items-center justify-center pt-20 lg:pt-32 overflow-hidden bg-warm-gray dark:bg-dark-gray">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(107,142,35,0.12)_0%,transparent_60%)]">
-        </div>
+    <!-- SECTION 1: HERO - Premium Split-Layout Snacking Experience -->
+    <section class="relative min-h-[90vh] flex items-center py-24 lg:py-32 overflow-hidden bg-white dark:bg-dark-gray">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Left Content -->
+                <div class="flex-1 text-left animate-fade-in opacity-0" style="animation-delay: 0.2s;">
+                    <span
+                        class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block">
+                        ARTISANAL SNACK STUDIO
+                    </span>
+                    <h1
+                        class="text-5xl sm:text-6xl md:text-7xl font-sans font-black text-dark-gray dark:text-white leading-[1.1] mb-8 tracking-tight hero-title">
+                        Snacking <br><span class="font-serif italic font-light text-popcorn-gold">Elevated</span><br>
+                        For Connoisseurs
+                    </h1>
+                    <p
+                        class="text-gray-600 dark:text-gray-300 max-w-lg text-base md:text-lg font-light mb-10 leading-relaxed">
+                        Small-batch, flavor-forward popcorn and gourmet snacks. Handcrafted with real ingredients —
+                        never artificial. Elevating daily cravings into shared culinary celebrations.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="snacks.html"
+                            class="bg-popcorn-gold hover:bg-popcorn-deep text-white px-8 py-3 rounded-full text-[11px] uppercase tracking-widest font-bold shadow-lg transition duration-300">
+                            Shop Snacks
+                        </a>
+                        <a href="about.html"
+                            class="border border-popcorn-gold text-popcorn-gold hover:bg-popcorn-gold hover:text-white px-8 py-3 rounded-full text-[11px] uppercase tracking-widest font-bold transition duration-300">
+                            Our Story
+                        </a>
+                    </div>
+                </div>
 
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-warm-gray/80 via-transparent to-warm-gray dark:from-dark-gray/90 dark:via-dark-gray/60 dark:to-dark-gray">
-        </div>
-        <div class="relative z-10 text-center px-5 max-w-6xl mx-auto">
-            <div class="inline-flex items-center gap-4 mb-6 animate-fade-in opacity-0" style="animation-delay: 0.1s;">
-                <span class="w-8 sm:w-16 h-[1px] bg-popcorn-gold"></span>
-                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold">Artisanal
-                    Snack Studio</span>
-                <span class="w-8 sm:w-16 h-[1px] bg-popcorn-gold"></span>
+                <!-- Right Image -->
+                <div class="flex-1 relative animate-fade-in opacity-0" style="animation-delay: 0.4s;">
+                    <div class="relative group">
+                        <!-- Decorative glow -->
+                        <div
+                            class="absolute -inset-4 bg-popcorn-gold/20 rounded-[2.5rem] blur-2xl group-hover:bg-popcorn-gold/30 transition duration-500">
+                        </div>
+
+                        <div
+                            class="relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/10 aspect-square sm:aspect-auto">
+                            <img src="assests/popistry_packaging.png" alt="Premium Popistry Packaging"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition duration-1000">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-serif font-black text-dark-gray dark:text-white leading-[0.95] mb-6 tracking-tighter animate-fade-in opacity-0 hero-title"
-                style="animation-delay: 0.3s;">
-                Snacking <br><span
-                    class="italic text-transparent bg-clip-text bg-gradient-to-r from-popcorn-gold to-popcorn-deep">Elevated.</span>
-            </h1>
-            <p class="text-gray-700 dark:text-gray-200 max-w-2xl mx-auto text-base md:text-lg font-light mb-8 animate-fade-in opacity-0 px-4"
-                style="animation-delay: 0.5s;">
-                Small-batch, flavor-forward popcorn and gourmet snacks. Handcrafted with real ingredients — never
-                artificial. Crave-worthy experiences, delivered.
-            </p>
+        </div>
 
+        <!-- Subtle background elements -->
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-popcorn-gold/5 to-transparent pointer-events-none">
         </div>
     </section>
 
-    <!-- SECTION 2: Craftsmanship Showcase (3 Pillars) -->
-    <section class="py-24 lg:py-32 bg-white dark:bg-black">
-        <div class="max-w-7xl mx-auto px-5 text-center">
-            <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block
- block mb-3">Our Craftsmanship</span>
-            <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mb-12">Made Different.
-                Made Better.</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="feature-card bg-warm-gray dark:bg-[#111111] p-8 rounded-2xl border border-gray-200 dark:border-white/10">
-                    <i class="fas fa-seedling text-3xl text-popcorn-gold mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-3">Heirloom Kernels</h3>
-                    <p class="text-gray-500 text-sm">Non-GMO corn from regenerative family farms — superior pop and
-                        texture in every batch.</p>
+    <!-- SECTION 2: Craftsmanship Showcase & Related Content -->
+    <section class="py-24 lg:py-32 bg-warm-gray dark:bg-black relative overflow-hidden transition-colors duration-300">
+        <!-- Abstract background blobs for a premium look -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-popcorn-gold/5 dark:bg-popcorn-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-popcorn-deep/5 dark:bg-popcorn-deep/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-24">
+                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-4 block">Our Craftsmanship</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Made Different. <span class="italic font-light text-popcorn-gold">Made Better.</span>
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+                    Every bag of Popistry popcorn represents a commitment to premium quality, culinary art, and sustainable practices. Explore the details below.
+                </p>
+            </div>
+
+            <!-- Interactive Split Layout -->
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <!-- Left Column: Interactive Craftsmanship Selectors -->
+                <div class="lg:col-span-6 space-y-6">
+                    <!-- Card 1 -->
+                    <button onclick="switchPillar(0)" id="pillar-btn-0"
+                        class="pillar-btn w-full text-left p-6 sm:p-8 rounded-[2rem] border bg-white dark:bg-[#111111] border-popcorn-gold/40 shadow-[0_10px_30px_rgba(107,142,35,0.05)] transition-all duration-500 scale-[1.02] focus:outline-none">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-popcorn-gold/10 flex items-center justify-center text-popcorn-gold shrink-0 transition-all duration-300">
+                                <i class="fas fa-seedling text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-popcorn-gold text-[10px] tracking-widest font-black uppercase mb-1 block">Pillar 01</span>
+                                <h3 class="font-serif text-xl sm:text-2xl font-bold text-dark-gray dark:text-white mb-2">Heirloom Kernels</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Non-GMO corn from regenerative family farms — superior pop and texture in every batch.
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <!-- Card 2 -->
+                    <button onclick="switchPillar(1)" id="pillar-btn-1"
+                        class="pillar-btn w-full text-left p-6 sm:p-8 rounded-[2rem] border bg-white/50 dark:bg-[#0f0f0f] border-gray-200 dark:border-white/5 shadow-sm hover:border-popcorn-gold/30 hover:bg-white dark:hover:bg-[#111111] transition-all duration-500 focus:outline-none">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 dark:text-gray-500 shrink-0 transition-all duration-300">
+                                <i class="fas fa-mortar-pestle text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 dark:text-gray-500 text-[10px] tracking-widest font-black uppercase mb-1 block">Pillar 02</span>
+                                <h3 class="font-serif text-xl sm:text-2xl font-bold text-dark-gray dark:text-white mb-2">In-House Seasonings</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    We grind our spices, age our cheeses, and source real ingredients — no lab-made powders.
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <!-- Card 3 -->
+                    <button onclick="switchPillar(2)" id="pillar-btn-2"
+                        class="pillar-btn w-full text-left p-6 sm:p-8 rounded-[2rem] border bg-white/50 dark:bg-[#0f0f0f] border-gray-200 dark:border-white/5 shadow-sm hover:border-popcorn-gold/30 hover:bg-white dark:hover:bg-[#111111] transition-all duration-500 focus:outline-none">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 dark:text-gray-500 shrink-0 transition-all duration-300">
+                                <i class="fas fa-recycle text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 dark:text-gray-500 text-[10px] tracking-widest font-black uppercase mb-1 block">Pillar 03</span>
+                                <h3 class="font-serif text-xl sm:text-2xl font-bold text-dark-gray dark:text-white mb-2">Eco-Conscious Packaging</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    100% compostable packaging + carbon-neutral shipping — because crunch shouldn't cost the earth.
+                                </p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
-                <div
-                    class="feature-card bg-warm-gray dark:bg-[#111111] p-8 rounded-2xl border border-gray-200 dark:border-white/10 transform md:-translate-y-3">
-                    <i class="fas fa-mortar-pestle text-3xl text-popcorn-gold mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-3">In-House Seasonings</h3>
-                    <p class="text-gray-500 text-sm">We grind our spices, age our cheeses, and source real ingredients —
-                        no lab-made powders.</p>
-                </div>
-                <div
-                    class="feature-card bg-warm-gray dark:bg-[#111111] p-8 rounded-2xl border border-gray-200 dark:border-white/10">
-                    <i class="fas fa-recycle text-3xl text-popcorn-gold mb-4"></i>
-                    <h3 class="font-serif text-xl font-bold mb-3">Eco-Conscious</h3>
-                    <p class="text-gray-500 text-sm">100% compostable packaging + carbon-neutral shipping — because
-                        crunch shouldn't cost the earth.</p>
+
+                <!-- Right Column: Related Content Dynamic Showcase -->
+                <div class="lg:col-span-6">
+                    <div class="relative bg-white dark:bg-[#111111] rounded-[2.5rem] p-8 sm:p-10 border border-gray-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden min-h-[550px] flex flex-col justify-between">
+                        <!-- Top header of Showcase -->
+                        <div class="flex items-center justify-between border-b border-gray-100 dark:border-white/5 pb-6 mb-6">
+                            <span class="text-popcorn-gold text-[10px] uppercase tracking-widest font-black">Related Flavor & Details</span>
+                            <div class="flex gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-popcorn-gold"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-popcorn-deep"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-gray-200 dark:bg-white/10"></span>
+                            </div>
+                        </div>
+
+                        <!-- Content Cards Container (Only one visible at a time based on JS switch) -->
+                        <div class="relative flex-grow flex flex-col justify-center">
+                            <!-- Showcase 0: Heirloom Kernels -->
+                            <div id="showcase-card-0" class="showcase-card transition-all duration-500 opacity-100 transform translate-x-0 relative z-10 flex flex-col justify-between h-full">
+                                <div class="space-y-6">
+                                    <div class="relative rounded-2xl overflow-hidden aspect-[16/9] shadow-md group/img">
+                                        <img src="assests/fla.jpg" alt="Classic Buttered Bliss"
+                                            class="w-full h-full object-cover transform group-hover/img:scale-105 transition duration-700">
+                                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[9px] uppercase tracking-widest font-bold text-popcorn-gold border border-popcorn-gold/20">
+                                            Signature Product
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h4 class="font-serif text-2xl font-bold text-dark-gray dark:text-white">Classic Buttered Bliss</h4>
+                                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                            Our heirloom kernels are specially selected for their ability to pop into large, round "mushroom" structures. This makes them exceptionally suited for carrying the rich, even glaze of our melted European butter.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-gray-100 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-gray-400 text-[9px] uppercase tracking-widest block mb-1">Recommended Pairing</span>
+                                        <span class="text-popcorn-deep text-xs font-bold uppercase tracking-wider"><i class="fas fa-wine-glass-alt me-1.5"></i>Crisp Chardonnay / Craft Cider</span>
+                                    </div>
+                                    <a href="snacks.html" class="inline-flex items-center gap-2 bg-popcorn-gold hover:bg-popcorn-deep text-white text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded-full shadow-md transition duration-300">
+                                        Shop Flavor
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Showcase 1: Seasonings -->
+                            <div id="showcase-card-1" class="showcase-card transition-all duration-500 opacity-0 transform translate-x-12 absolute inset-0 pointer-events-none flex flex-col justify-between h-full">
+                                <div class="space-y-6">
+                                    <div class="relative rounded-2xl overflow-hidden aspect-[16/9] shadow-md group/img">
+                                        <img src="assests/idx2.jpg" alt="Truffle Herbaceous"
+                                            class="w-full h-full object-cover transform group-hover/img:scale-105 transition duration-700">
+                                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[9px] uppercase tracking-widest font-bold text-popcorn-gold border border-popcorn-gold/20">
+                                            Premium Choice
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h4 class="font-serif text-2xl font-bold text-dark-gray dark:text-white">Truffle Herbaceous</h4>
+                                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                            We infuse our freshly-popped kernels with high-grade black summer truffle oil, finely ground rosemary, and aged Parmigiano-Reggiano. No pre-mixed powders or chemical flavor enhancers, just authentic Italian flavors.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-gray-100 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-gray-400 text-[9px] uppercase tracking-widest block mb-1">Recommended Pairing</span>
+                                        <span class="text-popcorn-deep text-xs font-bold uppercase tracking-wider"><i class="fas fa-wine-glass-alt me-1.5"></i>Dry Pinot Noir / Sparkling Water</span>
+                                    </div>
+                                    <a href="snacks.html" class="inline-flex items-center gap-2 bg-popcorn-gold hover:bg-popcorn-deep text-white text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded-full shadow-md transition duration-300">
+                                        Shop Flavor
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Showcase 2: Sustainability -->
+                            <div id="showcase-card-2" class="showcase-card transition-all duration-500 opacity-0 transform translate-x-12 absolute inset-0 pointer-events-none flex flex-col justify-between h-full">
+                                <div class="space-y-6">
+                                    <div class="relative rounded-2xl overflow-hidden aspect-[16/9] shadow-md group/img">
+                                        <img src="assests/popistry_packaging.png" alt="Eco Gift Set"
+                                            class="w-full h-full object-cover transform group-hover/img:scale-105 transition duration-700">
+                                        <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[9px] uppercase tracking-widest font-bold text-popcorn-gold border border-popcorn-gold/20">
+                                            Green Pack
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h4 class="font-serif text-2xl font-bold text-dark-gray dark:text-white">Eco-Pack Gifting Bundles</h4>
+                                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                            Our gift packs use 100% biodegradable soy ink and plant-based, home-compostable barrier films. Enjoy the ultimate crunch knowing the bag leaves no trace on our planet.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-gray-100 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
+                                    <div>
+                                        <span class="text-gray-400 text-[9px] uppercase tracking-widest block mb-1">Recommended Pairing</span>
+                                        <span class="text-popcorn-deep text-xs font-bold uppercase tracking-wider"><i class="fas fa-leaf me-1.5"></i>Eco-friendly events & gifts</span>
+                                    </div>
+                                    <a href="gift.html" class="inline-flex items-center gap-2 bg-popcorn-gold hover:bg-popcorn-deep text-white text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded-full shadow-md transition duration-300">
+                                        Shop Gift Set
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -579,10 +763,19 @@
                 </div>
                 <div class="lg:col-span-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-gray-400">Connect</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="mailto:hello@popistry.com" class="text-popcorn-gold">hello@popistry.com</a></li>
-                        <li>+1 (424) 269-7880</li>
-                        <li>Los Angeles, CA — Nationwide Shipping</li>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-popcorn-gold shrink-0"></i>
+                            <a href="mailto:hello@popistry.com" class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-popcorn-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-popcorn-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-popcorn-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -599,6 +792,51 @@
 
     <script>
             (function () {
+                window.switchPillar = function(index) {
+                    const buttons = document.querySelectorAll('.pillar-btn');
+                    const cards = document.querySelectorAll('.showcase-card');
+                    
+                    buttons.forEach((btn, idx) => {
+                        if (idx === index) {
+                            btn.classList.add('border-popcorn-gold/40', 'scale-[1.02]', 'bg-white', 'dark:bg-[#111111]');
+                            btn.classList.remove('border-gray-200', 'dark:border-white/5', 'bg-white/50', 'dark:bg-[#0f0f0f]');
+                            const iconBg = btn.querySelector('.w-12');
+                            if (iconBg) {
+                                iconBg.classList.add('bg-popcorn-gold/10', 'text-popcorn-gold');
+                                iconBg.classList.remove('bg-gray-100', 'dark:bg-white/5', 'text-gray-400', 'dark:text-gray-500');
+                            }
+                            const label = btn.querySelector('.uppercase');
+                            if (label) {
+                                label.classList.add('text-popcorn-gold');
+                                label.classList.remove('text-gray-400', 'dark:text-gray-500');
+                            }
+                        } else {
+                            btn.classList.remove('border-popcorn-gold/40', 'scale-[1.02]', 'bg-white', 'dark:bg-[#111111]');
+                            btn.classList.add('border-gray-200', 'dark:border-white/5', 'bg-white/50', 'dark:bg-[#0f0f0f]');
+                            const iconBg = btn.querySelector('.w-12');
+                            if (iconBg) {
+                                iconBg.classList.remove('bg-popcorn-gold/10', 'text-popcorn-gold');
+                                iconBg.classList.add('bg-gray-100', 'dark:bg-white/5', 'text-gray-400', 'dark:text-gray-500');
+                            }
+                            const label = btn.querySelector('.uppercase');
+                            if (label) {
+                                label.classList.remove('text-popcorn-gold');
+                                label.classList.add('text-gray-400', 'dark:text-gray-500');
+                            }
+                        }
+                    });
+                    
+                    cards.forEach((card, idx) => {
+                        if (idx === index) {
+                            card.classList.remove('opacity-0', 'translate-x-12', 'pointer-events-none', 'absolute', 'inset-0');
+                            card.classList.add('opacity-100', 'translate-x-0', 'relative', 'z-10');
+                        } else {
+                            card.classList.add('opacity-0', 'translate-x-12', 'pointer-events-none', 'absolute', 'inset-0');
+                            card.classList.remove('opacity-100', 'translate-x-0', 'relative', 'z-10');
+                        }
+                    });
+                };
+
                 const themeToggle = document.getElementById('theme-toggle'), mobileTheme = document.getElementById('mobile-theme-toggle'), html = document.documentElement;
                 function toggleTheme() { html.classList.toggle('dark'); localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light'); }
                 if (themeToggle) themeToggle.addEventListener('click', toggleTheme);

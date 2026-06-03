@@ -21,6 +21,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -462,7 +473,7 @@
     </section>
 
     <!-- SECTION 3: Build Your Own Gift Box (Interactive Customization) -->
-    <section
+    <section id="customizer"
         class="py-20 lg:py-28 bg-gradient-to-br from-popcorn-gold/5 via-transparent to-popcorn-deep/5 dark:from-popcorn-gold/10 dark:via-transparent">
         <div class="max-w-6xl mx-auto px-5">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -500,71 +511,69 @@
         </div>
     </section>
 
-    <!-- SECTION 4: Gift for Every Occasion (Category Grid) -->
-    <section class="py-20 lg:py-28 bg-white dark:bg-black">
+    <!-- SECTION 4: Gifting Innovations & Experience -->
+    <section class="py-20 lg:py-28 bg-white dark:bg-black transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-5">
-            <div class="text-center mb-12">
-                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block
-">Perfect For</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-2">Every Occasion
-                </h2>
+            <div class="text-center mb-16">
+                <span class="text-popcorn-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-4 block">Gifting Experiences</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white">Elevated Gifting Features</h2>
+                <div class="w-20 h-0.5 bg-popcorn-gold mx-auto mt-5"></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-birthday-cake text-2xl md:text-3xl text-popcorn-gold"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-warm-gray dark:bg-[#111111] p-8 rounded-[2rem] border border-gray-200/50 dark:border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(107,142,35,0.08)] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-popcorn-gold/10 dark:bg-popcorn-gold/20 rounded-2xl flex items-center justify-center text-popcorn-gold mb-6 transition-all duration-300 group-hover:scale-110">
+                            <i class="fas fa-wine-glass text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-dark-gray dark:text-white">Sommelier Pairings</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Each premium gift box includes an interactive flavor-pairing guide matching our sweet & savory kettle corn with fine wines and craft beverages.</p>
                     </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Birthdays</p>
+                    <a href="flavour.html" class="inline-flex items-center gap-2 text-popcorn-gold font-bold uppercase tracking-wider text-xs group/btn">
+                        <span>View Flavors</span>
+                        <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1.5 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-ring text-2xl md:text-3xl text-popcorn-gold"></i>
+
+                <div class="bg-warm-gray dark:bg-[#111111] p-8 rounded-[2rem] border border-gray-200/50 dark:border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(107,142,35,0.08)] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-popcorn-gold/10 dark:bg-popcorn-gold/20 rounded-2xl flex items-center justify-center text-popcorn-gold mb-6 transition-all duration-300 group-hover:scale-110">
+                            <i class="fas fa-stamp text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-dark-gray dark:text-white">Wax-Sealed Cards</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Make it unforgettable. Add a textured gift card personalized with your custom message, sealed by hand with gold wax and a dried botanical sprig.</p>
                     </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Weddings</p>
+                    <a href="#customizer" class="inline-flex items-center gap-2 text-popcorn-gold font-bold uppercase tracking-wider text-xs group/btn">
+                        <span>Personalize</span>
+                        <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1.5 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-building text-2xl md:text-3xl text-popcorn-gold"></i>
+
+                <div class="bg-warm-gray dark:bg-[#111111] p-8 rounded-[2rem] border border-gray-200/50 dark:border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(107,142,35,0.08)] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-popcorn-gold/10 dark:bg-popcorn-gold/20 rounded-2xl flex items-center justify-center text-popcorn-gold mb-6 transition-all duration-300 group-hover:scale-110">
+                            <i class="fas fa-calendar-alt text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-dark-gray dark:text-white">Scheduled Delivery</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Plan your gifting calendar in advance. Place your order today and schedule the exact delivery date up to 12 months ahead.</p>
                     </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Corporate</p>
+                    <a href="#customizer" class="inline-flex items-center gap-2 text-popcorn-gold font-bold uppercase tracking-wider text-xs group/btn">
+                        <span>Schedule Gift</span>
+                        <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1.5 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-heart text-2xl md:text-3xl text-popcorn-gold"></i>
+
+                <div class="bg-warm-gray dark:bg-[#111111] p-8 rounded-[2rem] border border-gray-200/50 dark:border-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(107,142,35,0.08)] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-popcorn-gold/10 dark:bg-popcorn-gold/20 rounded-2xl flex items-center justify-center text-popcorn-gold mb-6 transition-all duration-300 group-hover:scale-110">
+                            <i class="fas fa-wand-magic-sparkles text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-dark-gray dark:text-white">Flavor Customization</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">For large events or corporate campaigns, our culinary studio can co-develop unique, proprietary flavors custom-made for your brand.</p>
                     </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Just Because</p>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-tree text-2xl md:text-3xl text-popcorn-gold"></i>
-                    </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Holidays</p>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-graduation-cap text-2xl md:text-3xl text-popcorn-gold"></i>
-                    </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Graduation</p>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-hand-sparkles text-2xl md:text-3xl text-popcorn-gold"></i>
-                    </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Thank You</p>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-popcorn-gold/20 transition">
-                        <i class="fas fa-champagne-glasses text-2xl md:text-3xl text-popcorn-gold"></i>
-                    </div>
-                    <p class="text-xs md:text-sm font-semibold text-dark-gray dark:text-white">Anniversary</p>
+                    <a href="contact.html" class="inline-flex items-center gap-2 text-popcorn-gold font-bold uppercase tracking-wider text-xs group/btn">
+                        <span>Inquire Now</span>
+                        <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1.5 transition-transform"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -677,10 +686,18 @@
                 <div class="lg:col-span-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="mailto:hello@popistry.com"
-                                class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a></li>
-                        <li>+1 (424) 269-7880</li>
-                        <li>Los Angeles, CA — Ships Nationwide</li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-popcorn-gold shrink-0"></i>
+                            <a href="mailto:hello@popistry.com" class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-popcorn-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-popcorn-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-popcorn-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
                     </ul>
                 </div>
             </div>

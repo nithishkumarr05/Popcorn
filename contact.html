@@ -21,6 +21,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -414,7 +425,7 @@
                     class="bg-warm-gray dark:bg-[#111111] p-6 rounded-2xl contact-card text-center border border-gray-200 dark:border-white/10">
                     <div
                         class="w-14 h-14 bg-popcorn-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone-alt text-2xl text-popcorn-gold"></i>
+                        <i class="fa-solid fa-phone text-2xl text-popcorn-gold"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2 text-dark-gray dark:text-white">Call Us</h3>
                     <p class="text-gray-500 text-sm mb-3">Mon-Fri, 9am-6pm PST</p>
@@ -710,10 +721,18 @@
                 <div class="lg:col-span-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="mailto:hello@popistry.com"
-                                class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a></li>
-                        <li>+1 (424) 269-7880</li>
-                        <li>Los Angeles, CA — Ships Nationwide</li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-popcorn-gold shrink-0"></i>
+                            <a href="mailto:hello@popistry.com" class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-popcorn-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-popcorn-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-popcorn-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
                     </ul>
                 </div>
             </div>

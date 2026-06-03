@@ -21,6 +21,17 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
                     colors: {
                         'popcorn-gold': '#6B8E23',
                         'popcorn-deep': '#D48A2A',
@@ -398,100 +409,148 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Flavour 1 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/fla1.jpg" alt="Classic Butter"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Classic Buttered
-                                Bliss</h3><span class="text-popcorn-gold text-xs font-bold">Mild</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/fla1.jpg" alt="Classic Butter"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Classic Buttered
+                                    Bliss</h3><span class="text-popcorn-gold text-xs font-bold">Mild</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">Velvety European butter + flaky sea salt. Heirloom corn,
+                                kettle-cooked to golden perfection.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i
+                                    class="fas fa-leaf"></i><span>Vegetarian</span><i
+                                    class="fas fa-seedling ml-2"></i><span>Non-GMO</span></div>
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">Velvety European butter + flaky sea salt. Heirloom corn,
-                            kettle-cooked to golden perfection.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i
-                                class="fas fa-leaf"></i><span>Vegetarian</span><i
-                                class="fas fa-seedling ml-2"></i><span>Non-GMO</span></div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$6.50 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Flavour 2 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/flav3.jpg" alt="Salted Caramel"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Salted Caramel
-                                Crunch</h3><span class="text-popcorn-gold text-xs font-bold">Sweet</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/flav3.jpg" alt="Salted Caramel"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Salted Caramel
+                                    Crunch</h3><span class="text-popcorn-gold text-xs font-bold">Sweet</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">House-made caramel, flaky sea salt, and a touch of vanilla
+                                bean. Sweet + savoury perfection.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fas fa-heart"></i><span>Fan
+                                    Favorite</span></div>
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">House-made caramel, flaky sea salt, and a touch of vanilla
-                            bean. Sweet + savoury perfection.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fas fa-heart"></i><span>Fan
-                                Favorite</span></div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$7.50 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Flavour 3 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/flav2.jpg" alt="Truffle Herb"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Truffle Herbaceous
-                            </h3><span class="text-popcorn-gold text-xs font-bold">Savory</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/flav2.jpg" alt="Truffle Herb"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Truffle Herbaceous
+                                </h3><span class="text-popcorn-gold text-xs font-bold">Savory</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">Black truffle oil, parmesan, rosemary & cracked pepper —
+                                umami explosion in every bite.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i
+                                    class="fas fa-crown"></i><span>Chef's Pick</span></div>
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">Black truffle oil, parmesan, rosemary & cracked pepper —
-                            umami explosion in every bite.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i
-                                class="fas fa-crown"></i><span>Chef's Pick</span></div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$8.50 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Flavour 4 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/flav4.jpg" alt="White Cheddar"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Sharp White Cheddar
-                            </h3><span class="text-popcorn-gold text-xs font-bold">Cheesy</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/flav4.jpg" alt="White Cheddar"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Sharp White Cheddar
+                                </h3><span class="text-popcorn-gold text-xs font-bold">Cheesy</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">Real aged white cheddar, buttermilk, and a pinch of smoked
+                                paprika. Bold and tangy.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fas fa-fire"></i><span>Rich
+                                    & Creamy</span></div>
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">Real aged white cheddar, buttermilk, and a pinch of smoked
-                            paprika. Bold and tangy.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fas fa-fire"></i><span>Rich
-                                & Creamy</span></div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$7.00 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Flavour 5 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/flav5.jpg" alt="Chili Lime"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Spicy Chili Lime
-                            </h3><span class="text-popcorn-gold text-xs font-bold">🔥 Spicy</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/flav5.jpg" alt="Chili Lime"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105">
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">Ancho chili, zesty lime, and a touch of agave. Sweet heat
-                            with a citrus kick.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i
-                                class="fas fa-pepper-hot"></i><span>Medium Heat</span></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Spicy Chili Lime
+                                </h3><span class="text-popcorn-gold text-xs font-bold">🔥 Spicy</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">Ancho chili, zesty lime, and a touch of agave. Sweet heat
+                                with a citrus kick.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i
+                                    class="fas fa-pepper-hot"></i><span>Medium Heat</span></div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$7.00 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
                 <!-- Flavour 6 -->
                 <div
-                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10">
-                    <div class="h-56 overflow-hidden"><img src="assests/flav6.jpg" alt="Cookie Dough"
-                            class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
-                    <div class="p-5">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Cookie Dough Dream
-                            </h3><span class="text-popcorn-gold text-xs font-bold">Sweet</span>
+                    class="bg-warm-gray dark:bg-[#111111] rounded-2xl overflow-hidden shadow-xl flavour-card border border-gray-200 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 overflow-hidden"><img src="assests/flav6.jpg" alt="Cookie Dough"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-105"></div>
+                        <div class="p-5 pb-0">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-xl font-bold text-dark-gray dark:text-white">Cookie Dough Dream
+                                </h3><span class="text-popcorn-gold text-xs font-bold">Sweet</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-3">Brown butter, brown sugar, and mini chocolate chips —
+                                tastes like fresh-baked cookies.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-400"><i
+                                    class="fas fa-star"></i><span>Limited Batch</span></div>
                         </div>
-                        <p class="text-gray-500 text-sm mb-3">Brown butter, brown sugar, and mini chocolate chips —
-                            tastes like fresh-baked cookies.</p>
-                        <div class="flex items-center gap-2 text-xs text-gray-400"><i
-                                class="fas fa-star"></i><span>Limited Batch</span></div>
+                    </div>
+                    <div class="p-5 pt-4">
+                        <div class="border-t border-gray-200/50 dark:border-white/5 pt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-popcorn-gold">$8.00 <span class="text-xs font-normal text-gray-400 dark:text-gray-500">/ bag</span></span>
+                            <a href="#" class="text-xs uppercase font-bold text-popcorn-gold hover:text-popcorn-deep transition">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -738,10 +797,18 @@
                 <div class="lg:col-span-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="mailto:hello@popistry.com"
-                                class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a></li>
-                        <li>+1 (424) 269-7880</li>
-                        <li>Los Angeles, CA — Ships Nationwide</li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-popcorn-gold shrink-0"></i>
+                            <a href="mailto:hello@popistry.com" class="text-popcorn-gold hover:text-white transition">hello@popistry.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-popcorn-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-popcorn-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-popcorn-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
                     </ul>
                 </div>
             </div>
